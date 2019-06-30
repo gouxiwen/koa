@@ -25,7 +25,8 @@ async function addCourse(course) {
     endTime
   } = course
   const item = await getCourseByTime(startTime, endTime, weekday)
-  if (item) {
+  console.log(item)
+  if (item.length > 0) {
     throw new Error('当前时间段已经安排了课程')
   }
   return await Course.create(course)

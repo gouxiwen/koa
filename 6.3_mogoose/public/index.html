@@ -15,8 +15,10 @@
 </head>
 <body>
     <div id="app">
-        <el-button @click="query">查询</el-button>
-        <el-button @click="add">新增</el-button>
+        <el-card class="box-card">
+            <el-button @click="query">查询</el-button>
+            <el-button @click="add">新增</el-button>
+        </el-card>
         <el-table
         :data="tableData"
         border

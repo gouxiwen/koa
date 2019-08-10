@@ -4,7 +4,7 @@ log4js.configure({
     appenders: {
         cheese: {           // 指定要记录到日志分类名为cheese
             type: 'file',   // 指定日志展示方式为文件类型file
-            filename: 'cheese.log' // 指定日志输入文件名
+            filename: 'cheese.log' // 指定日志输出文件名
         }
     },
     categories: {

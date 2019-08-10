@@ -8,10 +8,11 @@ const middleware = require('./middleware')
 
 middleware(app)
 
-router(app)
-app.use(ctx => {
+app.use(async (ctx, next) => {
   ctx.log.info('访问记录')
+  await next()
 })
+router(app)
 app.listen(3000, () => {
   console.log('server is running at http://localhost:3000')
 })

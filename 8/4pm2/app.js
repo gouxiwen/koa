@@ -1,4 +1,4 @@
-// 增加nodejs进程管理器PM2，使用命令npm2 start pm2.config 可以利用配置文件启动管理器（7个实例）
+// 增加nodejs进程管理器PM2，使用命令npm2 start app.js/npm2 start pm2.config 可以利用配置文件启动管理器（7个实例）
 const Koa = require('koa')
 const app = new Koa()
 app.env = 'prd' // 设置环境，默认development
@@ -30,6 +30,7 @@ app.on("error", (err, ctx) => {
   };
 });
 // 暂停应用时，如果有资源需要释放或者事务需要结束（如数据库连接），可以监听并拦截SIGINT信号，清理完毕后手动关闭应用
+// eg:如果连接了db数据库
 // process.on('SIGINT', () => {
 //   db.stop(err => {
 //     process.exit(err ? 1 :0)

@@ -1,0 +1,12 @@
+{
+    "apps": [{
+        "script": "./app.js",
+        "instances": -1,        
+        "exec_mode": "cluster",
+        "watch": true,
+        "env": {
+            "NODE_ENV": "prod"
+        },
+        "max_memory_restart": "200Mp"
+    }]
+}
